@@ -115,9 +115,9 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     fontSize: 15,
     color: 'black',
-    margin: 20,
-    padding: 8,
-    width: '90%',
+    margin: 15,
+    padding: 12,
+    width: '80%',
     alignSelf: 'center',
     elevation: 5
 
@@ -135,7 +135,7 @@ const styles = StyleSheet.create({
     padding: 12,
     borderWidth: 1,
     borderColor: 'black',
-    width: '90%',
+    width: '80%',
   },
 
   textocadastrar:{

@@ -91,9 +91,9 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     fontSize: 15,
     color: 'black',
-    margin: 20,
-    padding: 8,
-    width: '90%',
+    margin: 15,
+    padding: 12,
+    width: '80%',
     alignSelf: 'center',
     elevation: 5
   },
@@ -106,7 +106,7 @@ const styles = StyleSheet.create({
     padding: 12,
     borderWidth: 1,
     borderColor: 'black',
-    width: '90%',
+    width: '80%',
   },
 
   textoenviar:{
@@ -120,7 +120,7 @@ const styles = StyleSheet.create({
     marginTop: 3,
     padding: 12,
     borderWidth: 0,
-    width: '90%',
+    width: '80%',
     backgroundColor:'#545454',
     marginBottom: 40,
     elevation: 5
@@ -138,7 +138,7 @@ const styles = StyleSheet.create({
     textDecorationLine: 'underline'
   },
   campoTitulo:{
-    marginRight: 10, // Espaçamento entre o texto e o TextInput
+    marginRight: 10,
     textAlign: 'left'
   }
 });

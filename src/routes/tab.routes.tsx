@@ -23,7 +23,7 @@ export default function TabRoutes(){
                 tabBarLabel: ' '
             }}
             />
-
+            
             <Tab.Screen 
             name="profile"
             component={Profile}
