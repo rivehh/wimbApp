@@ -95,7 +95,8 @@ const styles = StyleSheet.create({
     padding: 12,
     width: '80%',
     alignSelf: 'center',
-    elevation: 5
+    elevation: 5,
+    paddingVertical: 10
   },
 
   entrar: {
@@ -107,6 +108,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: 'black',
     width: '80%',
+    paddingVertical: 12
   },
 
   textoenviar:{
@@ -123,7 +125,8 @@ const styles = StyleSheet.create({
     width: '80%',
     backgroundColor:'#545454',
     marginBottom: 40,
-    elevation: 5
+    elevation: 5,
+    paddingVertical: 12
   },
 
   textocadastrar:{

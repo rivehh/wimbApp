@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, TouchableOpacity, TextInput, Button } from 'rea
 import Constants from 'expo-constants';
 import { createStackNavigator } from '@react-navigation/stack';
 import { StackScreenProps } from '@react-navigation/stack';
+import { Feather } from '@expo/vector-icons';
 
 type RootStackParamList = {
   login: undefined;
@@ -22,14 +23,23 @@ export default function Login({ navigation }:Props){
   const [isFocused2, setIsFocused2] = useState(false);
   return (
     <View style={styles.container}>
+
+      <TouchableOpacity style={styles.voltar} 
+      onPress={() => navigation.navigate('login')}>
+      <Feather name="arrow-left" style={styles.icon}/>
+      </TouchableOpacity>
+      
+      <View></View>
       <Text style={styles.titulo}> WIMB </Text>
       <Text style={styles.subtitulo}> WHERE IS MY BUS </Text>
 
-      <Text style={styles.tituloPagina}> Esqueceu a senha? </Text>
+      <View style={styles.caixaTextos}>
+      <Text style={styles.tituloPagina}>Esqueceu a senha? </Text>
       <Text style={styles.subtituloPagina}> 
         Digite o email vinculado a sua conta para redefinir a senha. 
       </Text>
-
+      </View>
+   
        <TextInput style={styles.campo}
         placeholder={isFocused ? '' : 'Email'}
         value={text}
@@ -56,6 +66,14 @@ const styles = StyleSheet.create({
     padding: 15,
   },
 
+  voltar: {
+    width: '100%',
+  },
+
+  icon: {
+    fontSize: 30
+  },
+
   titulo: {
     fontSize: 35,
     textAlign: 'center',
@@ -72,16 +90,23 @@ const styles = StyleSheet.create({
     marginBottom: 40
   },
 
+  caixaTextos:{
+    alignItems:'flex-start',
+    justifyContent: 'flex-start',
+    width: '80%'
+  },
+
   tituloPagina:{
     fontSize: 20,
-    textAlign: 'left',
-    fontWeight:'bold'
+    fontWeight:'bold',
+    marginBottom: 20,
+    marginTop: 50,
   },
 
   subtituloPagina:{
     fontSize: 15,
-    marginLeft: 20,
-    fontWeight:'light'
+    fontWeight:'light',
+    marginBottom: 35
   },
 
   campo:{
@@ -93,7 +118,8 @@ const styles = StyleSheet.create({
     padding: 12,
     width: '80%',
     alignSelf: 'center',
-    elevation: 5
+    elevation: 5,
+    paddingVertical: 10
   },
 
    enviar: {
@@ -106,7 +132,8 @@ const styles = StyleSheet.create({
     width: '80%',
     backgroundColor:'#545454',
     marginBottom: 40,
-    elevation: 5
+    elevation: 5,
+    paddingVertical: 15
   },
 
   textocadastrar:{

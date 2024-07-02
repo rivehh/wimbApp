@@ -67,13 +67,16 @@ const styles = StyleSheet.create({
   },
   campo: {
     marginTop: 30,
-    justifyContent: 'center',
-    alignItems: 'center',
+    backgroundColor: 'white',
     borderRadius: 20,
-    padding: 8,
-    borderWidth: 1,
-    borderColor: 'black',
-    width: '75%',
+    fontSize: 15,
+    color: 'black',
+    padding: 12,
+    width: '70%',
+    alignSelf: 'center',
+    elevation: 7,
+    paddingVertical: 10,
+    borderWidth: 0.4, 
   },
 
  conteudo: {
