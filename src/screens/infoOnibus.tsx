@@ -4,14 +4,18 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { StackScreenProps } from '@react-navigation/stack';
 
 type RootStackParamList = {
-  infoOnibus: undefined;
-  search: undefined;
-};
+    login: undefined;
+    cadastro: undefined;
+    home: undefined;
+    senha: undefined;
+    infoOnibus: undefined;
+  };
 
-type Props = StackScreenProps<RootStackParamList, 'search'>;
-const Stack = createStackNavigator();
+  const Stack = createStackNavigator<RootStackParamList>();
+  type Props = StackScreenProps<RootStackParamList, 'infoOnibus'>;
 
-export default function Search({ navigation }:Props) {
+
+export default function infoOnibus({ navigation }:Props) {
   return (
     <View style={styles.container}>
 
@@ -20,35 +24,17 @@ export default function Search({ navigation }:Props) {
          <Text style={styles.subtitulo}> WHERE IS MY BUS </Text>
       </View>
 
-     <TextInput style={styles.campo}/>
+      <TouchableOpacity style={styles.onibus}>
+          <Text style={styles.onibusTexto}>351 - Shopping Internacional</Text>
+          <View style={styles.horario}>
+            <Text style={styles.horarioTexto}>12 minutos</Text>
+          </View>
+      </TouchableOpacity>
+      <View style={styles.conteudo}>
+        <Text style={styles.tituloConteudo}>Próximos</Text>
 
-     <View style={styles.conteudo}>
-        <View style={styles.local}>
-        <Text style={styles.textoLocal}>(Sua localização)</Text>
-        <Text style={styles.alterarLocal}>Alterar local</Text>
-        <View style={styles.line}/>
+      </View>
         </View>
-        <TouchableOpacity style={styles.onibus}
-        onPress={() => navigation.navigate('infoOnibus')}>
-          <Text style={styles.onibusTexto}>351 - Shopping Internacional</Text>
-          <View style={styles.horario}>
-            <Text style={styles.horarioTexto}>12 minutos</Text>
-          </View>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.onibus}>
-          <Text style={styles.onibusTexto}>351 - Shopping Internacional</Text>
-          <View style={styles.horario}>
-            <Text style={styles.horarioTexto}>12 minutos</Text>
-          </View> 
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.onibus}>
-          <Text style={styles.onibusTexto}>351 - Shopping Internacional</Text>
-          <View style={styles.horario}>
-            <Text style={styles.horarioTexto}>12 minutos</Text>
-          </View>
-        </TouchableOpacity>
-        </View>
-    </View>
   );
 }
 
@@ -58,9 +44,11 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
   },
+
   head: {
     marginTop: 0,
   },
+
   titulo: {
     fontSize: 35,
     textAlign: 'center',
@@ -76,47 +64,23 @@ const styles = StyleSheet.create({
     letterSpacing: 8,
     marginBottom: 40
   },
-  campo: {
-    marginTop: 30,
-    backgroundColor: 'white',
-    borderRadius: 20,
-    fontSize: 15,
-    color: 'black',
-    padding: 12,
-    width: '70%',
-    alignSelf: 'center',
-    elevation: 7,
-    paddingVertical: 10,
-    borderWidth: 0.4, 
-  },
 
  conteudo: {
-  backgroundColor: '#DFDFDF',
-  width: '100%',
+  width: '90%',
   height: '55%',
-  marginTop: 70,
+  marginTop: 30,
   alignItems: 'center',
+  borderWidth: 1,
+  borderRadius: 20
  },
- local: {
-  width: '70%',
-  top: 0,
- },
- textoLocal: {
-  fontSize: 16,
-  fontWeight: 'bold', 
-  marginBottom: 10, 
-  marginTop: 20
- },
- alterarLocal: {
-  fontSize: 12,
-  textDecorationLine: 'underline',
- },
+
  line: {
   borderBottomColor: 'black',
   borderBottomWidth: 1,
   marginVertical: 17,
-  marginBottom: 35
+  marginBottom: 20
  },
+
  onibus:{
   width: '90%',
   backgroundColor: '#EBCB4A',
@@ -129,6 +93,7 @@ const styles = StyleSheet.create({
   marginBottom: 20,
   elevation: 5
  },
+
  onibusTexto: {
   fontWeight: '700',
   marginLeft: 7,
@@ -149,5 +114,10 @@ horarioTexto: {
   color: '#fff',
   fontWeight: '800',
   fontSize: 12
+},
+tituloConteudo: {
+    fontSize: 35,
+    textAlign: 'left',
+    fontWeight: 'bold',
 }
 });
