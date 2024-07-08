@@ -114,9 +114,10 @@ const styles = StyleSheet.create({
     height: '100%',
     justifyContent: 'center',
     alignItems: 'center',
-    paddingHorizontal: 20,
-    marginRight: 0,
-    borderRadius: 20
+    paddingHorizontal: 5,
+    borderRadius: 20,
+    width: '10%',
+    marginLeft: -25
    },
    icon: {
     color: 'black',
