@@ -2,6 +2,7 @@ import { StyleSheet, Text, TextInput, View, ScrollView, TouchableOpacity } from 
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { createStackNavigator } from '@react-navigation/stack';
 import { StackScreenProps } from '@react-navigation/stack';
+import React, { useState } from 'react';
 
 type RootStackParamList = {
   infoOnibus: undefined;
@@ -12,6 +13,8 @@ type Props = StackScreenProps<RootStackParamList, 'search'>;
 const Stack = createStackNavigator();
 
 export default function Search({ navigation }:Props) {
+  const [text, setText] = useState('');
+  const [isFocused, setIsFocused] = useState(false);
   return (
     <View style={styles.container}>
 
@@ -20,11 +23,16 @@ export default function Search({ navigation }:Props) {
          <Text style={styles.subtitulo}> WHERE IS MY BUS </Text>
       </View>
 
-     <TextInput style={styles.campo}/>
+     <TextInput style={styles.campo}
+      placeholder={isFocused ? '' : '  Pesquisar rota'}
+      value={text}
+      onChangeText={setText}
+      onFocus={() => setIsFocused(true)}
+      onBlur={() => setIsFocused(false)}/>
 
      <View style={styles.conteudo}>
         <View style={styles.local}>
-        <Text style={styles.textoLocal}>(Sua localização)</Text>
+        <Text style={styles.textoLocal}>Avenida Odair Santanelli, 800 - Cecap</Text>
         <Text style={styles.alterarLocal}>Alterar local</Text>
         <View style={styles.line}/>
         </View>
@@ -36,15 +44,15 @@ export default function Search({ navigation }:Props) {
           </View>
         </TouchableOpacity>
         <TouchableOpacity style={styles.onibus}>
-          <Text style={styles.onibusTexto}>351 - Shopping Internacional</Text>
+          <Text style={styles.onibusTexto}>433 - Terminal São João</Text>
           <View style={styles.horario}>
-            <Text style={styles.horarioTexto}>12 minutos</Text>
+            <Text style={styles.horarioTexto}>15 minutos</Text>
           </View> 
         </TouchableOpacity>
         <TouchableOpacity style={styles.onibus}>
-          <Text style={styles.onibusTexto}>351 - Shopping Internacional</Text>
+          <Text style={styles.onibusTexto}>330 - Terminal Taboão</Text>
           <View style={styles.horario}>
-            <Text style={styles.horarioTexto}>12 minutos</Text>
+            <Text style={styles.horarioTexto}>20 minutos</Text>
           </View>
         </TouchableOpacity>
         </View>
@@ -83,11 +91,11 @@ const styles = StyleSheet.create({
     fontSize: 15,
     color: 'black',
     padding: 12,
-    width: '70%',
+    width: '75%',
     alignSelf: 'center',
     elevation: 7,
     paddingVertical: 10,
-    borderWidth: 0.4, 
+    borderWidth: 0.8, 
   },
 
  conteudo: {
@@ -118,9 +126,9 @@ const styles = StyleSheet.create({
   marginBottom: 35
  },
  onibus:{
-  width: '90%',
+  width: '85%',
   backgroundColor: '#EBCB4A',
-  height: 55,
+  height: 50,
   borderRadius: 20,
   flexDirection: 'row',
   alignItems: 'center',
@@ -142,12 +150,12 @@ const styles = StyleSheet.create({
   alignItems: 'center',
   paddingHorizontal: 20,
   borderRadius: 20,
-  width: '40%',
+  width: '45%',
   marginRight: -25
  },
 horarioTexto: {
   color: '#fff',
-  fontWeight: '800',
+  fontWeight: '700',
   fontSize: 12
 }
 });

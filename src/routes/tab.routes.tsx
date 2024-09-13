@@ -2,6 +2,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Feather } from '@expo/vector-icons';
 
 import Search from "../screens/Search";
+import Mapa from "../screens/Rota";
 import Profile from "../screens/Profile";
 
 const Tab = createBottomTabNavigator();
@@ -12,8 +13,8 @@ export default function TabRoutes(){
         <Tab.Navigator screenOptions={{headerShown: false,  tabBarStyle: {
             backgroundColor: '#EBCB4A',
           },
-          tabBarActiveTintColor: 'gray',
-          tabBarInactiveTintColor: 'black',}}>
+          tabBarActiveTintColor: 'black',
+          tabBarInactiveTintColor: 'white',}}>
 
             <Tab.Screen 
             name="feed"
@@ -25,6 +26,16 @@ export default function TabRoutes(){
             />
             
             <Tab.Screen 
+            name="mapa"
+            component={Mapa}
+            options={{
+                
+                tabBarIcon: ({color, size}) => <Feather name="map-pin" color={color} size={size}/>,
+                tabBarLabel: ' '
+            }}
+            />
+
+            <Tab.Screen 
             name="profile"
             component={Profile}
             options={{
@@ -33,6 +44,7 @@ export default function TabRoutes(){
                 tabBarLabel: ' '
             }}
             />
+
         </Tab.Navigator>
     )
 }

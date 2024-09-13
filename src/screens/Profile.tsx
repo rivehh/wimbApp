@@ -5,7 +5,7 @@ export default function Profile() {
   return (
     <View style={styles.container}>
       <View style={styles.profile}>
-      <View style={styles.image}><Text style={styles.imageText}>Adicione sua foto</Text></View>
+      <View style={styles.image}><Feather name="user" style={styles.iconProfile}/></View>
       <View>
       <Text style={styles.nome}>Fabiano Silva</Text>
       <Text style={styles.email}>fabiano_silva@gmail.com</Text>
@@ -13,6 +13,7 @@ export default function Profile() {
       </View>
       <View style={styles.fav}>
         <Text style={styles.favTexto}>Favoritos</Text>
+        <View style={styles.line}/>
       </View>
       <TouchableOpacity style={styles.onibus}>
       <View style={styles.horario}>
@@ -24,13 +25,13 @@ export default function Profile() {
       <View style={styles.horario}>
       <Feather name="heart" style={styles.icon}/>
       </View>
-          <Text style={styles.onibusTexto}>351 - Shopping Internacional</Text>
+          <Text style={styles.onibusTexto}>233 - Cocaia</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.onibus}>
       <View style={styles.horario}>
       <Feather name="heart" style={styles.icon}/>
       </View>
-          <Text style={styles.onibusTexto}>351 - Shopping Internacional</Text>
+          <Text style={styles.onibusTexto}>453 - Centro</Text>
       </TouchableOpacity>
     </View>
   );
@@ -59,7 +60,8 @@ const styles = StyleSheet.create({
     color: 'black',
     borderRadius:100,
     marginRight: '10%',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   imageText:{
     fontSize: 9,
@@ -93,7 +95,7 @@ const styles = StyleSheet.create({
   onibus:{
     width: '85%',
     backgroundColor:'#545454',
-    height: 55,
+    height: 50,
     borderRadius: 20,
     flexDirection: 'row',
     alignItems: 'center',
@@ -116,7 +118,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingHorizontal: 5,
     borderRadius: 20,
-    width: '10%',
+    width: '20%',
     marginLeft: -25
    },
    icon: {
@@ -124,4 +126,14 @@ const styles = StyleSheet.create({
     fontSize: 20, 
     fontWeight: 'bold'
    },
+   line: {
+    borderTopColor: 'black',
+    borderTopWidth: 1,
+    width: '100%',
+    marginBottom: 10,
+   },
+
+   iconProfile: {
+   fontSize: 80
+   }
 });

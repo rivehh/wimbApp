@@ -26,14 +26,14 @@ export default function Login({ navigation }:Props){
       <Text style={styles.subtitulo}> WHERE IS MY BUS </Text>
 
        <TextInput style={styles.campo}
-        placeholder={isFocused ? '' : 'Email'}
+        placeholder={isFocused ? '' : '  Email'}
         value={text}
         onChangeText={setText}
         onFocus={() => setIsFocused(true)}
         onBlur={() => setIsFocused(false)}/>
 
         <TextInput style={styles.campo}
-        placeholder={isFocused2 ? '' : 'Senha'}
+        placeholder={isFocused2 ? '' : '  Senha'}
         value={text2}
         onChangeText={setText2}
         onFocus={() => setIsFocused2(true)}
@@ -108,7 +108,8 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: 'black',
     width: '80%',
-    paddingVertical: 12
+    paddingVertical: 12,
+    fontSize: 15,
   },
 
   textoenviar:{

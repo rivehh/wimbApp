@@ -78,8 +78,6 @@ export default function Cad({ navigation }:Props){
         <Text style={styles.textocadastrar}> Cadastrar </Text>
 
         </TouchableOpacity>
-        <Text style={styles.textoinferior}> Esqueci a senha </Text>
-        <Text style={styles.textoinferior}> Continuar sem login </Text>
     </View>
   );
 }
@@ -145,13 +143,6 @@ const styles = StyleSheet.create({
     color: '#000000',
   },
   
-   textoinferior: {
-    fontSize: 10,
-    textAlign: 'center',
-    marginTop: 15,
-    fontWeight: 'bold',
-    textDecorationLine: 'underline'
-  },
   voltar: {
     width: '100%',
     marginTop: '0%'
