@@ -16,7 +16,7 @@ type RootStackParamList = {
   const Stack = createStackNavigator<RootStackParamList>();
   type Props = StackScreenProps<RootStackParamList, 'infoOnibus'>;
 
-export default function infoOnibus({ navigation }:Props) {
+export default function InfoOnibus({ navigation }:Props) {
   return (
     <View style={styles.container}>
       <TouchableOpacity style={styles.voltar} 

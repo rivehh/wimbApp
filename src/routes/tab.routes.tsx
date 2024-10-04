@@ -4,6 +4,7 @@ import { Feather } from '@expo/vector-icons';
 import Search from "../screens/Search";
 import Mapa from "../screens/Rota";
 import Profile from "../screens/Profile";
+import News from "../screens/News";
 
 const Tab = createBottomTabNavigator();
 
@@ -17,7 +18,7 @@ export default function TabRoutes(){
           tabBarInactiveTintColor: 'white',}}>
 
             <Tab.Screen 
-            name="feed"
+            name="Search"
             component={Search}
             options={{
                 tabBarIcon: ({color, size}) => <Feather name="search" color={color} size={size}/>,
@@ -31,6 +32,16 @@ export default function TabRoutes(){
             options={{
                 
                 tabBarIcon: ({color, size}) => <Feather name="map-pin" color={color} size={size}/>,
+                tabBarLabel: ' '
+            }}
+            />
+
+            <Tab.Screen 
+            name="news"
+            component={News}
+            options={{
+                
+                tabBarIcon: ({color, size}) => <Feather name="book-open" color={color} size={size}/>,
                 tabBarLabel: ' '
             }}
             />

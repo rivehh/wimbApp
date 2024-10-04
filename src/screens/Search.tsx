@@ -6,10 +6,10 @@ import React, { useState } from 'react';
 
 type RootStackParamList = {
   infoOnibus: undefined;
-  search: undefined;
+  Search: undefined;
 };
 
-type Props = StackScreenProps<RootStackParamList, 'search'>;
+type Props = StackScreenProps<RootStackParamList, 'Search'>;
 const Stack = createStackNavigator();
 
 export default function Search({ navigation }:Props) {
@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
   titulo: {
     fontSize: 35,
     textAlign: 'center',
-    marginTop: 50,
+    marginTop: 0,
     fontWeight: 'bold',
     letterSpacing: 5,
   },

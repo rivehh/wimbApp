@@ -1,10 +1,10 @@
 import { createStackNavigator } from '@react-navigation/stack';
-import TabRoutes from './tab.routes';
+import DrawerRoutes from './drawer.routes';
 import Cad from "../screens/Cad";
 import Login from "../screens/Login";
 import Search from "../screens/Search";
 import EsqueciSenha from "../screens/EsqueciSenha";
-import infoOnibus from "../screens/infoOnibus";
+import InfoOnibus from "../screens/infoOnibus";
 
 type RootStackParamList = {
     login: undefined;
@@ -30,7 +30,7 @@ export default function StackRoutes(){
                 />
                 <Stack.Screen
                     name="home" 
-                    component={TabRoutes} 
+                    component={DrawerRoutes} 
                 />
                 
                 <Stack.Screen
@@ -39,7 +39,7 @@ export default function StackRoutes(){
                 />
                 <Stack.Screen
                     name="infoOnibus" 
-                    component={infoOnibus} 
+                    component={InfoOnibus} 
                 />
 
                 
