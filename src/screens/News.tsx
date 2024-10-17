@@ -15,7 +15,7 @@ export default function News() {
       </View>
       <Image
         source={require('../../assets/dutraObras.jpg')}
-        style={styles.image}
+        style={styles.imagePrincipal}
       />
       
       <LinearGradient
@@ -24,9 +24,27 @@ export default function News() {
       />
 
     <View style={styles.a}>
-        <Text style={styles.tituloNoticia}> OBRAS NA DUTRA: </Text>
-        <Text style={styles.subtituloNoticia}> OBRAS NA DUTRA: </Text>
+        <View style={styles.barra}/>
+        <View style={styles.texto}>
+
+        <Text style={styles.tituloNoticiaPrincipal}> OBRAS NA DUTRA: </Text>
+        <Text style={styles.subtituloNoticiaPrincipal}> Via será interditada na altura da Hélio Smidt 
+
+      </Text>
+        </View>
     </View>
+    <View style={styles.conteudo}>
+    <Image
+        source={require('../../assets/dutraObras.jpg')}
+        style={styles.image}
+      />
+      <View style={styles.barraSuperior}/>
+      <Text style={styles.tituloNoticia}></Text>
+    </View>
+
+    
+    
+
       
     </View>
   );
@@ -57,33 +75,71 @@ const styles = StyleSheet.create({
     marginBottom: 40
   },
 
-  image: {
-    marginTop: 150,
+  imagePrincipal: {
+    marginTop: 90,
     width: '110%',
     height: '30%',
     position: 'absolute',
   },
   gradient: {
-    marginTop: 150,
+    marginTop: 90,
     position: 'absolute', 
     width: '110%',
     height: '30%',
   },
   a: {
+    marginLeft: 30,
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
     width: '100%', 
+    flexDirection: 'row',
+    marginTop: '30%',
   }, 
-  tituloNoticia: {
-    color:'white',
-    fontWeight: '500',
-    fontSize: 25,
-    marginTop: '45%',
+  barra:{
+    width: 4,
+    height: 40,
+    backgroundColor: '#EBCB4A',
+    marginTop: 8,
+    marginRight: 10
   },
-  subtituloNoticia:{
+  texto:{
+    flexDirection: 'column',
+  },
+  tituloNoticiaPrincipal: {
     color:'white',
-    fontWeight: '300',
-    fontSize: 20,
-    marginTop: '50%',
- }
+    fontWeight: '600',
+    fontSize: 25,
+    marginLeft: -4
+  },
+  subtituloNoticiaPrincipal:{
+    color:'white',
+    fontWeight: '400',
+    fontSize: 15,
+    marginTop: -5
+ },
+ conteudo:{
+  marginTop: 13,
+  width: '100%',
+  height: '100%',
+  flexDirection: 'row',
+ },
+ image:{
+    width: '30%',
+    height: '15%',
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start',
+ },
+ barraSuperior:{
+  width: '100%',
+  height: 20,
+  backgroundColor: '#EBCB4A',
+  marginRight: 10
+},
+tituloNoticia: {
+  color:'black',
+  fontWeight: '600',
+  fontSize: 25,
+  marginTop: 500,
+  marginLeft: 100
+},
 });
