@@ -8,31 +8,25 @@ const { width } = Dimensions.get('window');
 export default function Sobre() {
   return (
     <ScrollView contentContainerStyle={styles.container}>
-      
-      {/* Fundo com efeito neon */}
-      <LinearGradient colors={['#000', '#141414', '#282828']} style={styles.background}>
-        <View style={styles.content}>
-          
-          {/* Cabeçalho com botão de voltar */}
-          <View style={styles.header}>
-            <TouchableOpacity>
-              <Ionicons name="arrow-back" size={28} color="#FFD700" />
-            </TouchableOpacity>
-            <Text style={styles.title}>Sobre o App</Text>
-          </View>
-
-          {/* Elementos futuristas */}
-          <View style={styles.neonCircleLarge} />
-          <View style={styles.neonCircleSmall} />
-
-          {/* Seção da logo minimalista */}
+  
          
-
-          {/* Descrição animada */}
-          <Text style={styles.sectionTitle}>O que é o WIMB?</Text>
-          <Text style={styles.text}>
-            O <Text style={styles.highlight}>WIMB</Text> é o seu parceiro digital que revoluciona a mobilidade urbana. Com tecnologia de ponta, o app oferece informações em tempo real sobre ônibus, rotas e horários!
+          <View style={styles.fundoPreto}>
+          <Text style={styles.sectionTitle1}>O QUE É O WIMB?</Text>
+          <Text style={styles.text1}>
+            O <Text style={styles.highlight}>WIMB</Text> é o seu parceiro digital que revoluciona a mobilidade urbana. Com tecnologia de ponta, o app oferece informações sobre ônibus, rotas, horários e notícias.
           </Text>
+          </View>
+          
+          <View style={styles.backgroundAmarelo}>
+          <View style={styles.fundoAmarelo}>
+            <Text style={styles.sectionTitle2}>DIFERENCIAL</Text>
+            <Text style={styles.text2}>
+              O <Text style={styles.highlight}>WIMB</Text> é o seu parceiro digital que revoluciona a mobilidade urbana. Com tecnologia de ponta, o app oferece informações sobre ônibus, rotas, horários e notícias.
+            </Text>
+          </View>
+          </View>
+          
+          
 
           {/* Seções interativas com ícones neon */}
           <Text style={styles.sectionTitle}>Nossa Missão</Text>
@@ -63,8 +57,6 @@ export default function Sobre() {
 
           {/* Rodapé */}
           <Text style={styles.footer}>© 2024 WIMB. Todos os direitos reservados.</Text>
-        </View>
-      </LinearGradient>
     </ScrollView>
   );
 }
@@ -81,64 +73,68 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     minHeight: '100%',
   },
-  content: {
-    width: '100%',
-    alignItems: 'center',
-    justifyContent: 'center',
+
+  fundoPreto: {
+    backgroundColor: 'black',
+    marginLeft: 25,
+    marginRight: 100,
+    marginTop: 30
   },
-  header: {
-    width: '100%',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    marginBottom: 20,
+
+  fundoAmarelo: {
+    backgroundColor: '#EBCB4A',
+    marginLeft: 100,
+    marginRight: 25,
+    marginTop: 30,
+    textAlign: 'right'
   },
+
+  backgroundAmarelo: {
+    width: '100%',
+    backgroundColor: '#EBCB4A'
+  },
+
   title: {
     fontSize: 28,
     color: '#FFD700',
     fontWeight: 'bold',
     textTransform: 'uppercase',
   },
-  neonCircleLarge: {
-    position: 'absolute',
-    top: -200,
-    left: -200,
-    width: 400,
-    height: 400,
-    borderRadius: 200,
-    backgroundColor: 'rgba(255, 215, 0, 0.15)',
-    zIndex: -1,
-  },
-  neonCircleSmall: {
-    position: 'absolute',
-    bottom: -150,
-    right: -150,
-    width: 300,
-    height: 300,
-    borderRadius: 150,
-    backgroundColor: 'rgba(255, 215, 0, 0.3)',
-    zIndex: -1,
-  },
-  logo: {
-    width: 120,
-    height: 120,
-    resizeMode: 'contain',
-    marginBottom: 20,
-  },
-  sectionTitle: {
+ 
+  sectionTitle1: {
     fontSize: 24,
     color: '#FFD700',
     marginBottom: 15,
     fontWeight: 'bold',
+    textAlign: 'left'
   },
-  text: {
+
+  sectionTitle2: {
+    fontSize: 24,
+    color: 'black',
+    marginBottom: 15,
+    fontWeight: 'bold',
+    textAlign: 'right'
+  },
+
+  text1: {
     fontSize: 16,
     color: '#e0e0e0',
     lineHeight: 24,
-    textAlign: 'justify',
+    textAlign: 'left',
     marginBottom: 20,
     flex: 1,
   },
+
+  text2: {
+    fontSize: 16,
+    color: 'black',
+    lineHeight: 24,
+    textAlign: 'right',
+    marginBottom: 20,
+    flex: 1,
+  },
+
   highlight: {
     color: '#FFD700',
     fontWeight: 'bold',
@@ -148,26 +144,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginBottom: 15,
   },
-  contactButton: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: '#FFD700',
-    paddingVertical: 12,
-    paddingHorizontal: 24,
-    borderRadius: 30,
-    marginTop: 30,
-    elevation: 10,
-  },
   contactButtonText: {
     fontSize: 18,
     color: '#000',
     fontWeight: 'bold',
     marginRight: 10,
   },
-  footer: {
-    fontSize: 14,
-    color: '#888',
-    textAlign: 'center',
-    marginTop: 40,
-  },
+  
 });
